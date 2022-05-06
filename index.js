@@ -65,7 +65,7 @@ async function run() {
         const query = { email };
         const cursor = itemCollection.find(query);
         const result = await cursor.toArray();
-        res.send(result);
+       return res.send(result);
       }
       res.status(403).send({ message: "forbiden access" });
     });
