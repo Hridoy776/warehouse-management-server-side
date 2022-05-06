@@ -34,10 +34,12 @@ async function run() {
     });
     // item api with specific item
     app.get("/user/items",async(req,res)=>{
-      const email=req.query.email;
+      const email=req?.query?.email;
+      
       const query = {email};
       const cursor = itemCollection.find(query);
       const result = await cursor.toArray();
+      
       res.send(result);
     })
     //  item with specific id
